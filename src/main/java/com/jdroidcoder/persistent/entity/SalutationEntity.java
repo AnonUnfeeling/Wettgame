@@ -15,6 +15,9 @@ public class SalutationEntity extends AbstractEntity<Long> {
     @OneToOne
     private UserDataEntity userDataEntity;
 
+    public SalutationEntity() {
+    }
+
     public SalutationEntity(String name) {
         this.name = name;
     }

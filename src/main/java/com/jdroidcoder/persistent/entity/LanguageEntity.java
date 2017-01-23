@@ -18,6 +18,9 @@ public class LanguageEntity extends AbstractEntity<Long> {
     @OneToOne
     private UserDataEntity userDataEntity;
 
+    public LanguageEntity() {
+    }
+
     public LanguageEntity(String name) {
         this.name = name;
     }

@@ -18,6 +18,9 @@ public class SexEntity extends AbstractEntity<Long> {
     @OneToOne
     private UserDataEntity userDataEntity;
 
+    public SexEntity() {
+    }
+
     public SexEntity(String name) {
         this.name = name;
     }

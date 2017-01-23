@@ -27,11 +27,13 @@ public class UserDataEntity extends AbstractEntity<Long> {
     private LocalDate birthday;
     @OneToOne
     private UserEntity userEntity;
-    @OneToOne(mappedBy = "userDataEntity", cascade = CascadeType.ALL)
+
+    @OneToOne(cascade = CascadeType.ALL)
     private SalutationEntity salutationEntity;
-    @OneToOne(mappedBy = "userDataEntity", cascade = CascadeType.ALL)
+
+    @OneToOne(cascade = CascadeType.ALL)
     private SexEntity sexEntity;
-    @OneToOne(mappedBy = "userDataEntity", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private LanguageEntity languageEntity;
 
     public String getFirstName() {

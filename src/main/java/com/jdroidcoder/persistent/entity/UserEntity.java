@@ -22,7 +22,8 @@ public class UserEntity extends AbstractEntity<Long> {
     private int blocked;
     @Column(name = "activation_code", nullable = false)
     private String activationCode;
-    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    //    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private UserDataEntity userDataEntity;
 
     public String getEmail() {

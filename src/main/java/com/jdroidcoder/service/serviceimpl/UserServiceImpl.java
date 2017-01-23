@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Iterable<UserEntity> getAllUser() {
+        userRepository.findAll().forEach(p-> System.out.println(p.toString()));
         return userRepository.findAll();
     }
 
@@ -35,7 +36,6 @@ public class UserServiceImpl implements UserService {
         userEntity.setPassword("password");
         userEntity.setActive(1);
         userEntity.setBlocked(0);
-
         UserDataEntity userDataEntity = new UserDataEntity();
         userDataEntity.setAboutMe("about me");
         userDataEntity.setLanguageEntity(new LanguageEntity("ENG"));
@@ -47,11 +47,8 @@ public class UserServiceImpl implements UserService {
         userDataEntity.setPhone("phone");
         userDataEntity.setSalutationEntity(new SalutationEntity("Salutation"));
         userDataEntity.setSexEntity(new SexEntity("sex"));
-
-//        userDataEntity.setUserEntity(userEntity);
         userEntity.setUserData(userDataEntity);
 
         userRepository.save(userEntity);
-        userRepository.findAll().forEach(p-> System.out.println(p.toString()));
     }
 }
