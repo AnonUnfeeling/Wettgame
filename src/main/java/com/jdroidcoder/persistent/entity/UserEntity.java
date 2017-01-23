@@ -24,6 +24,16 @@ public class UserEntity extends AbstractEntity<Long> {
     private String activationCode;
     @OneToOne(cascade = CascadeType.ALL)
     private UserDataEntity userDataEntity;
+    @ManyToOne
+    private UsersGroup usersGroup;
+
+    public UsersGroup getUsersGroup() {
+        return usersGroup;
+    }
+
+    public void setUsersGroup(UsersGroup usersGroup) {
+        this.usersGroup = usersGroup;
+    }
 
     public String getEmail() {
         return email;
