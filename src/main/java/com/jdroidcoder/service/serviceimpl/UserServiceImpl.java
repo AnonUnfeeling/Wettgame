@@ -26,31 +26,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createTestUser() {
-//        UserEntity userEntity = new UserEntity();
-//        userEntity.setEmail("Email1");
-//        userEntity.setUsername("username1");
-//        userEntity.setActivationCode("act-code");
-//        userEntity.setPassword("password");
-//        userEntity.setActive(1);
-//        userEntity.setBlocked(0);
-//        UserDataEntity userDataEntity = new UserDataEntity();
-//        userDataEntity.setAboutMe("about me1");
-//        userDataEntity.setLanguageEntity(new LanguageEntity("ENG1"));
-//        userDataEntity.setBirthday(LocalDate.now());
-//        userDataEntity.setFirstName("firstName1");
-//        userDataEntity.setLastName("lastName1");
-//        userDataEntity.setLuckyNumber(123);
-//        userDataEntity.setMobile("mobile1");
-//        userDataEntity.setPhone("phone1");
-//        userDataEntity.setSalutationEntity(new SalutationEntity("Salutation1"));
-//        userDataEntity.setSexEntity(new SexEntity("sex1"));
-//        userEntity.setUserData(userDataEntity);
-//
-//        userRepository.save(userEntity);
-    }
-
-    @Override
     public UserEntity getUserByName(String username) {
         return userRepository.findByUsername(username);
     }

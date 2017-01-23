@@ -9,8 +9,6 @@ import com.jdroidcoder.persistent.entity.UserEntity;
 public interface UserService {
     Iterable<UserEntity> getAllUser();
 
-    void createTestUser();
-
     UserEntity getUserByName(String username);
 
     void createUser(UserDto userDto);
