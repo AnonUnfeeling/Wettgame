@@ -47,8 +47,11 @@ public class UserServiceImpl implements UserService {
         userDataEntity.setPhone("phone");
         userDataEntity.setSalutationEntity(new SalutationEntity("Salutation"));
         userDataEntity.setSexEntity(new SexEntity("sex"));
-        userDataEntity.setUserEntity(userEntity);
+
+//        userDataEntity.setUserEntity(userEntity);
         userEntity.setUserData(userDataEntity);
+
         userRepository.save(userEntity);
+        userRepository.findAll().forEach(p-> System.out.println(p.toString()));
     }
 }

@@ -37,4 +37,12 @@ public class LanguageEntity extends AbstractEntity<Long> {
     public void setUserDataEntity(UserDataEntity userDataEntity) {
         this.userDataEntity = userDataEntity;
     }
+
+    @Override
+    public String toString() {
+        return "LanguageEntity{" +
+                "name='" + name + '\'' +
+                ", userDataEntity=" + userDataEntity +
+                '}';
+    }
 }

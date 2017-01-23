@@ -34,4 +34,12 @@ public class SalutationEntity extends AbstractEntity<Long> {
     public void setUserDataEntity(UserDataEntity userDataEntity) {
         this.userDataEntity = userDataEntity;
     }
+
+    @Override
+    public String toString() {
+        return "SalutationEntity{" +
+                "name='" + name + '\'' +
+                ", userDataEntity=" + userDataEntity +
+                '}';
+    }
 }

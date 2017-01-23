@@ -37,4 +37,12 @@ public class SexEntity extends AbstractEntity<Long> {
     public void setUserDataEntity(UserDataEntity userDataEntity) {
         this.userDataEntity = userDataEntity;
     }
+
+    @Override
+    public String toString() {
+        return "SexEntity{" +
+                "name='" + name + '\'' +
+                ", userDataEntity=" + userDataEntity +
+                '}';
+    }
 }

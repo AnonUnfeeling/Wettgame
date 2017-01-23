@@ -22,7 +22,7 @@ public class UserEntity extends AbstractEntity<Long> {
     private int blocked;
     @Column(name = "activation_code", nullable = false)
     private String activationCode;
-    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL)
     private UserDataEntity userDataEntity;
 
     public String getEmail() {
@@ -79,5 +79,18 @@ public class UserEntity extends AbstractEntity<Long> {
 
     public void setUserData(UserDataEntity userData) {
         this.userDataEntity = userData;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", active=" + active +
+                ", blocked=" + blocked +
+                ", activationCode='" + activationCode + '\'' +
+                ", userDataEntity=" + userDataEntity +
+                '}';
     }
 }

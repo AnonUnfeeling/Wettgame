@@ -26,7 +26,6 @@ public class UserDataEntity extends AbstractEntity<Long> {
     @Column(name = "birthday")
     private LocalDate birthday;
     @OneToOne
-    @JoinColumn(name = "user_id")
     private UserEntity userEntity;
     @OneToOne(mappedBy = "userDataEntity", cascade = CascadeType.ALL)
     private SalutationEntity salutationEntity;
@@ -121,5 +120,22 @@ public class UserDataEntity extends AbstractEntity<Long> {
 
     public void setLanguageEntity(LanguageEntity languageEntity) {
         this.languageEntity = languageEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDataEntity{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", luckyNumber=" + luckyNumber +
+                ", aboutMe='" + aboutMe + '\'' +
+                ", birthday=" + birthday +
+                ", userEntity=" + userEntity +
+                ", salutationEntity=" + salutationEntity +
+                ", sexEntity=" + sexEntity +
+                ", languageEntity=" + languageEntity +
+                '}';
     }
 }
