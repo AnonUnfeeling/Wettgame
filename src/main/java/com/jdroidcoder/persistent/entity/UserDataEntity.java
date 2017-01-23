@@ -7,7 +7,7 @@ import java.time.LocalDate;
  * Created by jdroidcoder on 23.01.17.
  */
 @Entity
-@Table(name = "user_data")
+//@Table(name = "user_data")
 public class UserDataEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 7222473597761021815L;
 

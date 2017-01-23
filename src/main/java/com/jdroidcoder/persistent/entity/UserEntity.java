@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by jdroidcoder on 23.01.17.
  */
 @Entity
-@Table(name = "user")
+//@Table(name = "user")
 public class UserEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 7222473597761021815L;
 
@@ -22,7 +22,7 @@ public class UserEntity extends AbstractEntity<Long> {
     private int blocked;
     @Column(name = "activation_code", nullable = false)
     private String activationCode;
-    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private UserDataEntity userDataEntity;
 
     public String getEmail() {

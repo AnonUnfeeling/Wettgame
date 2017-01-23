@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by jdroidcoder on 23.01.17.
  */
 @Entity
-@Table(name = "language")
+//@Table(name = "language")
 public class LanguageEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 7222473597761021815L;
 

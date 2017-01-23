@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by jdroidcoder on 23.01.17.
  */
 @Entity
-@Table(name = "salutation")
+//@Table(name = "salutation")
 public class SalutationEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 7222473597760218151L;
 
