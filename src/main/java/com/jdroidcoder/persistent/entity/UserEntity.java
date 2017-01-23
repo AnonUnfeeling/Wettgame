@@ -22,7 +22,6 @@ public class UserEntity extends AbstractEntity<Long> {
     private int blocked;
     @Column(name = "activation_code", nullable = false)
     private String activationCode;
-    //    @OneToOne(mappedBy = "userEntity", cascade = CascadeType.ALL)
     @OneToOne(cascade = CascadeType.ALL)
     private UserDataEntity userDataEntity;
 
@@ -80,6 +79,40 @@ public class UserEntity extends AbstractEntity<Long> {
 
     public void setUserData(UserDataEntity userData) {
         this.userDataEntity = userData;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserEntity)) return false;
+        if (!super.equals(o)) return false;
+
+        UserEntity that = (UserEntity) o;
+
+        if (getActive() != that.getActive()) return false;
+        if (getBlocked() != that.getBlocked()) return false;
+        if (getEmail() != null ? !getEmail().equals(that.getEmail()) : that.getEmail() != null) return false;
+        if (getUsername() != null ? !getUsername().equals(that.getUsername()) : that.getUsername() != null)
+            return false;
+        if (getPassword() != null ? !getPassword().equals(that.getPassword()) : that.getPassword() != null)
+            return false;
+        if (getActivationCode() != null ? !getActivationCode().equals(that.getActivationCode()) : that.getActivationCode() != null)
+            return false;
+        return userDataEntity != null ? userDataEntity.equals(that.userDataEntity) : that.userDataEntity == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
+        result = 31 * result + (getUsername() != null ? getUsername().hashCode() : 0);
+        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
+        result = 31 * result + getActive();
+        result = 31 * result + getBlocked();
+        result = 31 * result + (getActivationCode() != null ? getActivationCode().hashCode() : 0);
+        result = 31 * result + (userDataEntity != null ? userDataEntity.hashCode() : 0);
+        return result;
     }
 
     @Override

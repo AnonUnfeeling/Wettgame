@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class SalutationEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 7222473597760218151L;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private String name;
     @OneToOne
     private UserDataEntity userDataEntity;

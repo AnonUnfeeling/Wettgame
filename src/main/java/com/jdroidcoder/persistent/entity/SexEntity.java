@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class SexEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 7222473597761021815L;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private String name;
     @OneToOne
     private UserDataEntity userDataEntity;
