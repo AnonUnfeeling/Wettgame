@@ -25,13 +25,13 @@ public class UserEntity extends AbstractEntity<Long> {
     @OneToOne(cascade = CascadeType.ALL)
     private UserDataEntity userDataEntity;
     @ManyToOne
-    private UsersGroup usersGroup;
+    private UsersGroupEntity usersGroup;
 
-    public UsersGroup getUsersGroup() {
+    public UsersGroupEntity getUsersGroup() {
         return usersGroup;
     }
 
-    public void setUsersGroup(UsersGroup usersGroup) {
+    public void setUsersGroup(UsersGroupEntity usersGroup) {
         this.usersGroup = usersGroup;
     }
 

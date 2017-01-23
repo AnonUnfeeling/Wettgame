@@ -8,24 +8,24 @@ import javax.persistence.OneToOne;
  * Created by jdroidcoder on 24.01.17.
  */
 @Entity
-public class UserGroup extends AbstractEntity<Long>{
+public class UserGroupEntity extends AbstractEntity<Long>{
     @Column
     private String name;
     @OneToOne
-    private UsersGroup usersGroup;
+    private UsersGroupEntity usersGroup;
 
-    public UserGroup() {
+    public UserGroupEntity() {
     }
 
-    public UserGroup(String name) {
+    public UserGroupEntity(String name) {
         this.name = name;
     }
 
-    public UsersGroup getUsersGroup() {
+    public UsersGroupEntity getUsersGroup() {
         return usersGroup;
     }
 
-    public void setUsersGroup(UsersGroup usersGroup) {
+    public void setUsersGroup(UsersGroupEntity usersGroup) {
         this.usersGroup = usersGroup;
     }
 
@@ -40,12 +40,12 @@ public class UserGroup extends AbstractEntity<Long>{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserGroup)) return false;
+        if (!(o instanceof UserGroupEntity)) return false;
         if (!super.equals(o)) return false;
 
-        UserGroup userGroup = (UserGroup) o;
+        UserGroupEntity userGroupEntity = (UserGroupEntity) o;
 
-        return getName() != null ? getName().equals(userGroup.getName()) : userGroup.getName() == null;
+        return getName() != null ? getName().equals(userGroupEntity.getName()) : userGroupEntity.getName() == null;
 
     }
 

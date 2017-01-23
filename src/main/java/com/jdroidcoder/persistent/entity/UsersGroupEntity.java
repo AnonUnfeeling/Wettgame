@@ -11,27 +11,27 @@ import java.util.List;
  * Created by jdroidcoder on 24.01.17.
  */
 @Entity
-public class UsersGroup extends AbstractEntity<Long>{
+public class UsersGroupEntity extends AbstractEntity<Long>{
     @OneToOne(cascade = CascadeType.ALL)
-    private UserGroup userGroup;
+    private UserGroupEntity userGroupEntity;
 
     @OneToMany(mappedBy = "usersGroup", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserEntity> userEntities = new ArrayList<>();
 
-    public UsersGroup() {
+    public UsersGroupEntity() {
     }
 
-    public UsersGroup(UserGroup userGroup, List<UserEntity> userEntities) {
-        this.userGroup = userGroup;
+    public UsersGroupEntity(UserGroupEntity userGroupEntity, List<UserEntity> userEntities) {
+        this.userGroupEntity = userGroupEntity;
         this.userEntities = userEntities;
     }
 
-    public UserGroup getUserGroup() {
-        return userGroup;
+    public UserGroupEntity getUserGroupEntity() {
+        return userGroupEntity;
     }
 
-    public void setUserGroup(UserGroup userGroup) {
-        this.userGroup = userGroup;
+    public void setUserGroupEntity(UserGroupEntity userGroupEntity) {
+        this.userGroupEntity = userGroupEntity;
     }
 
     public List<UserEntity> getUsersGroup() {
