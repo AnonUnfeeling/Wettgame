@@ -20,6 +20,8 @@ public class AddressEntity extends AbstractEntity<Long> {
     private String city;
     @OneToOne(cascade = CascadeType.ALL)
     private CountryEntity countryEntity;
+    @OneToOne
+    private LocationEntity locationEntity;
 
     public AddressEntity() {
     }
@@ -29,6 +31,14 @@ public class AddressEntity extends AbstractEntity<Long> {
         this.zipcode = zipcode;
         this.city = city;
         this.countryEntity = countryEntity;
+    }
+
+    public LocationEntity getLocationEntity() {
+        return locationEntity;
+    }
+
+    public void setLocationEntity(LocationEntity locationEntity) {
+        this.locationEntity = locationEntity;
     }
 
     public String getStreet() {
