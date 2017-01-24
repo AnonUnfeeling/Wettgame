@@ -14,4 +14,6 @@ public interface UserService {
     void createUser(UserDto userDto);
 
     void removeByID(Long id);
+
+    void createTestUser();
 }

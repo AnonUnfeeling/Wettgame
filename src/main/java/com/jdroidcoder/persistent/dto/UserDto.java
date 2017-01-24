@@ -11,14 +11,11 @@ import javax.validation.constraints.Size;
  */
 public class UserDto {
     @NotEmpty(message = "Email can not be empty")
-    @Size(max = 45, message = "Email is too long (maximum is 45 characters)")
     @Email
     private String email;
     @NotEmpty(message = "Username can not be empty")
-    @Size(max = 45, message = "Username is too long (maximum is 45 characters)")
     private String username;
     @NotEmpty(message = "Password can not be empty")
-    @Size(max = 255, message = "Username is too long (maximum is 255 characters)")
     private String password;
     private int active;
     private int blocked;
@@ -26,6 +23,15 @@ public class UserDto {
     private UserDataEntity userDataEntity;
 
     public UserDto() {
+    }
+
+    public UserDto(String email, String username, String password, int active, int blocked, String activationCode) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.active = active;
+        this.blocked = blocked;
+        this.activationCode = activationCode;
     }
 
     public UserDto(String email, String username, String password, int active,
@@ -93,5 +99,18 @@ public class UserDto {
 
     public void setUserDataEntity(UserDataEntity userDataEntity) {
         this.userDataEntity = userDataEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", active=" + active +
+                ", blocked=" + blocked +
+                ", activationCode='" + activationCode + '\'' +
+                ", userDataEntity=" + userDataEntity +
+                '}';
     }
 }
