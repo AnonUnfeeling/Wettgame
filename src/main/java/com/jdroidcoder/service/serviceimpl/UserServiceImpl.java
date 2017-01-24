@@ -5,6 +5,8 @@ import com.jdroidcoder.persistent.entity.*;
 import com.jdroidcoder.persistent.repository.UserRepository;
 import com.jdroidcoder.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -15,9 +17,11 @@ import java.time.LocalDate;
 @Service
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
+        this.passwordEncoder = new BCryptPasswordEncoder();
         this.userRepository = userRepository;
     }
 
@@ -30,10 +34,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void createTestUser() {
         UserEntity userEntity = new UserEntity();
-        userEntity.setEmail("Email1");
-        userEntity.setUsername("username1");
+        userEntity.setEmail("email");
+        userEntity.setUsername("admin");
         userEntity.setActivationCode("act-code");
-        userEntity.setPassword("password");
+        userEntity.setPassword(passwordEncoder.encode("admin"));
         userEntity.setActive(1);
         userEntity.setBlocked(0);
         UserDataEntity userDataEntity = new UserDataEntity();
@@ -77,7 +81,12 @@ public class UserServiceImpl implements UserService {
         userEntity.setEmail(userDto.getEmail());
         userEntity.setUsername(userDto.getUsername());
         userEntity.setActivationCode(userDto.getActivationCode());
-        userEntity.setPassword(userDto.getPassword());
+//        userEntity.setPassword(userDto.getPassword());
+        String pass = userDto.getPassword();
+        if (pass != null && !pass.trim().isEmpty()) {
+            userEntity.setPassword(passwordEncoder.encode(pass));
+        }
+
         userEntity.setActive(userDto.getActive());
         userEntity.setBlocked(userDto.getBlocked());
         userEntity.setUserData(userDto.getUserDataEntity());

@@ -22,7 +22,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/getUsers")
+    @GetMapping("/getUsers")
     public ResponseEntity<Iterable<UserEntity>> getUsers() {
         return ResponseEntity.ok(userService.getAllUser());
     }

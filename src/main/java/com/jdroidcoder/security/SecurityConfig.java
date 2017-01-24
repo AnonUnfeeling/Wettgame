@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRepository;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
@@ -49,12 +51,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http
-                    .authorizeRequests()
+            http.authorizeRequests()
+                    .antMatchers("/createTest").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .formLogin()
-                    .loginPage("/login").permitAll()
+//                    .loginPage("/login").permitAll()
                     .successHandler(this.authSuccessHandler)
                     .and()
                     .logout().permitAll()
@@ -62,7 +64,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutSuccessUrl("/login?logout")
                     .invalidateHttpSession(true)
                     .and()
-                    .userDetailsService(this.userDetailsService());
+                    .userDetailsService(this.userDetailsService())
+                    .csrf().csrfTokenRepository(csrfTokenRepository());
+        }
+
+        private CsrfTokenRepository csrfTokenRepository() {
+            HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
+            repository.setSessionAttributeName("_csrf");
+            return repository;
         }
     }
 
@@ -71,9 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public static class ApiWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http
-                    .csrf()
-                    .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+            http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         }
     }
 }

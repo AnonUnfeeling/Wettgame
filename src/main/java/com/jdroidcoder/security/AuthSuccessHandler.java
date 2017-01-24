@@ -18,13 +18,13 @@ import java.io.IOException;
 @Component
 public class AuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
-    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-    private final AuthenticationService authenticationService;
+//    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+//    private final AuthenticationService authenticationService;
 
-    @Autowired
-    public AuthSuccessHandler(AuthenticationService authenticationService) {
-        this.authenticationService = authenticationService;
-    }
+//    @Autowired
+//    public AuthSuccessHandler(AuthenticationService authenticationService) {
+//        this.authenticationService = authenticationService;
+//    }
 
     @Override
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
