@@ -13,6 +13,8 @@ public interface UserService {
 
     void createUser(UserDto userDto);
 
+    void createUser(UserEntity userDto);
+
     void removeByID(Long id);
 
     void createTestUser();

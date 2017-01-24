@@ -7,4 +7,8 @@ import com.jdroidcoder.persistent.dto.UserDataDto;
  */
 public interface UserDataService {
     void setUserDetails(String username, UserDataDto userDataDto);
+
+    UserDataDto getUserInfo(String username);
+
+    void removeUserInfo(Long id);
 }

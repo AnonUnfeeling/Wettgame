@@ -142,6 +142,37 @@ public class UserDataDto {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserDataDto)) return false;
+
+        UserDataDto that = (UserDataDto) o;
+
+        if (getLuckyNumber() != that.getLuckyNumber()) return false;
+        if (getFirstName() != null ? !getFirstName().equals(that.getFirstName()) : that.getFirstName() != null)
+            return false;
+        if (getLastName() != null ? !getLastName().equals(that.getLastName()) : that.getLastName() != null)
+            return false;
+        if (getPhone() != null ? !getPhone().equals(that.getPhone()) : that.getPhone() != null) return false;
+        if (getMobile() != null ? !getMobile().equals(that.getMobile()) : that.getMobile() != null) return false;
+        if (getAboutMe() != null ? !getAboutMe().equals(that.getAboutMe()) : that.getAboutMe() != null) return false;
+        return getBirthday() != null ? getBirthday().equals(that.getBirthday()) : that.getBirthday() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getFirstName() != null ? getFirstName().hashCode() : 0;
+        result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
+        result = 31 * result + (getPhone() != null ? getPhone().hashCode() : 0);
+        result = 31 * result + (getMobile() != null ? getMobile().hashCode() : 0);
+        result = 31 * result + getLuckyNumber();
+        result = 31 * result + (getAboutMe() != null ? getAboutMe().hashCode() : 0);
+        result = 31 * result + (getBirthday() != null ? getBirthday().hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "UserDataDto{" +
                 "firstName='" + firstName + '\'' +
