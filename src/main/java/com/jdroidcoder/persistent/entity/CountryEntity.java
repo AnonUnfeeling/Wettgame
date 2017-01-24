@@ -19,6 +19,10 @@ public class CountryEntity  extends AbstractEntity<Long>{
     public CountryEntity() {
     }
 
+    public CountryEntity(String name) {
+        this.name = name;
+    }
+
     public CountryEntity(String name, AddressEntity addressEntity) {
         this.name = name;
         this.addressEntity = addressEntity;
@@ -38,5 +42,13 @@ public class CountryEntity  extends AbstractEntity<Long>{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "CountryEntity{" +
+                "name='" + name + '\'' +
+                ", addressEntity=" + addressEntity +
+                '}';
     }
 }

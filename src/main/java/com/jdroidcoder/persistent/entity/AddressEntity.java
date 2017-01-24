@@ -22,6 +22,8 @@ public class AddressEntity extends AbstractEntity<Long> {
     private CountryEntity countryEntity;
     @OneToOne
     private LocationEntity locationEntity;
+    @OneToOne
+    private UserDataEntity userDataEntity;
 
     public AddressEntity() {
     }
@@ -71,5 +73,25 @@ public class AddressEntity extends AbstractEntity<Long> {
 
     public void setCountryEntity(CountryEntity countryEntity) {
         this.countryEntity = countryEntity;
+    }
+
+    public UserDataEntity getUserDataEntity() {
+        return userDataEntity;
+    }
+
+    public void setUserDataEntity(UserDataEntity userDataEntity) {
+        this.userDataEntity = userDataEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "AddressEntity{" +
+                "street='" + street + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", city='" + city + '\'' +
+                ", countryEntity=" + countryEntity +
+                ", locationEntity=" + locationEntity +
+                ", userDataEntity=" + userDataEntity +
+                '}';
     }
 }

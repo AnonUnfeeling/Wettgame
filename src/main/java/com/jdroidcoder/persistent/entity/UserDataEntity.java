@@ -33,6 +33,8 @@ public class UserDataEntity extends AbstractEntity<Long> {
     private SexEntity sexEntity;
     @OneToOne(cascade = CascadeType.ALL)
     private LanguageEntity languageEntity;
+    @OneToOne(cascade = CascadeType.ALL)
+    private AddressEntity addressEntity;
 
     public String getFirstName() {
         return firstName;
@@ -120,6 +122,14 @@ public class UserDataEntity extends AbstractEntity<Long> {
 
     public void setLanguageEntity(LanguageEntity languageEntity) {
         this.languageEntity = languageEntity;
+    }
+
+    public AddressEntity getAddressEntity() {
+        return addressEntity;
+    }
+
+    public void setAddressEntity(AddressEntity addressEntity) {
+        this.addressEntity = addressEntity;
     }
 
     @Override
