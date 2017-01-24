@@ -12,6 +12,7 @@ import java.util.List;
  */
 @Entity
 public class UsersGroupEntity extends AbstractEntity<Long>{
+    private static final long serialVersionUID = 7222473597761021855L;
     @OneToOne(cascade = CascadeType.ALL)
     private UserGroupEntity userGroupEntity;
 

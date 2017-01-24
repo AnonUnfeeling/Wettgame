@@ -27,10 +27,8 @@ public class UserDataEntity extends AbstractEntity<Long> {
     private LocalDate birthday;
     @OneToOne
     private UserEntity userEntity;
-
     @OneToOne(cascade = CascadeType.ALL)
     private SalutationEntity salutationEntity;
-
     @OneToOne(cascade = CascadeType.ALL)
     private SexEntity sexEntity;
     @OneToOne(cascade = CascadeType.ALL)
