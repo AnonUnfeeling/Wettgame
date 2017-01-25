@@ -12,6 +12,6 @@ public interface GroupService {
 
     List<UserGroupEntity> getAllGroups();
 
-    void removeGroup(Long id);
+    void removeGroup(String groupName);
 
 }

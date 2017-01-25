@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class UserGroupEntity extends AbstractEntity<Long>{
     private static final long serialVersionUID = 7222453597761021815L;
-    @Column
+    @Column(nullable = false, unique = true)
     private String name;
     @OneToOne
     private UsersGroupEntity usersGroup;

@@ -40,7 +40,7 @@ public class GroupServiceImplTest {
 
     @After
     public void clear(){
-        groupService.removeGroup(userGroupEntity.getId());
+        groupService.removeGroup(userGroupEntity.getName());
         assertFalse(groupService.getAllGroups().stream().filter(p->p.equals(userGroupEntity)).findFirst().isPresent());
     }
 }

@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  * Created by jdroidcoder on 24.01.17.
  */
 public interface GroupRepository extends CrudRepository<UserGroupEntity, Long> {
+    UserGroupEntity findByName(String name);
 }
