@@ -1,5 +1,6 @@
 package com.jdroidcoder.service.serviceimpl;
 
+import com.jdroidcoder.persistent.SpringDataConfig;
 import com.jdroidcoder.persistent.dto.UserDto;
 import com.jdroidcoder.persistent.entity.*;
 import com.jdroidcoder.persistent.repository.UserRepository;
@@ -14,6 +15,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
@@ -23,7 +26,9 @@ import static org.junit.Assert.*;
 /**
  * Created by jdroidcoder on 23.01.17.
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {SpringDataConfig.class})
+@ActiveProfiles("test")
 @SpringBootTest
 public class UserServiceImplTest {
     @Autowired

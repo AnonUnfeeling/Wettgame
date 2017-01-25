@@ -14,4 +14,6 @@ public interface GroupService {
 
     void removeGroup(String groupName);
 
+    UserGroupEntity getGroupByName(String groupName);
+
 }

@@ -38,6 +38,11 @@ public class GroupServiceImplTest {
         assertTrue(groupService.getAllGroups().size() > 0);
     }
 
+    @Test
+    public void getGroupByName() throws Exception {
+        System.out.println(groupService.getGroupByName("testGroup"));
+    }
+
     @After
     public void clear(){
         groupService.removeGroup(userGroupEntity.getName());

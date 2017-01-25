@@ -56,4 +56,12 @@ public class UserGroupEntity extends AbstractEntity<Long>{
         result = 31 * result + (getName() != null ? getName().hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "UserGroupEntity{" +
+                "name='" + name + '\'' +
+                ", usersGroup=" + usersGroup +
+                '}';
+    }
 }

@@ -42,4 +42,11 @@ public class GroupController {
         groupService.removeGroup(groupDto.getName());
         return ResponseEntity.ok("Group was removed");
     }
+
+    @GetMapping("/getGroupByName")
+    public ResponseEntity getGroupByName(@Valid GroupDto groupDto, BindingResult bindingResult){
+        if (bindingResult.hasErrors())
+            return ResponseEntity.badRequest().body(bindingResult.getFieldErrors().get(0).getDefaultMessage());
+        return ResponseEntity.ok(groupService.getGroupByName(groupDto.getName()));
+    }
 }

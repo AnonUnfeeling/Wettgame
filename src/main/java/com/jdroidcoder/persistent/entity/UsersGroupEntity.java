@@ -42,4 +42,12 @@ public class UsersGroupEntity extends AbstractEntity<Long>{
     public void setUsersGroup(List<UserEntity> userEntities) {
         this.userEntities = userEntities;
     }
+
+    @Override
+    public String toString() {
+        return "UsersGroupEntity{" +
+                "userGroupEntity=" + userGroupEntity +
+                ", userEntities=" + userEntities +
+                '}';
+    }
 }

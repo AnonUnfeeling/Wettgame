@@ -35,4 +35,9 @@ public class GroupServiceImpl implements GroupService {
         groupRepository.delete(groupRepository.findByName(groupName));
     }
 
+    @Override
+    public UserGroupEntity getGroupByName(String groupName) {
+        return groupRepository.findByName(groupName);
+    }
+
 }
