@@ -2,6 +2,7 @@ package com.jdroidcoder.persistent.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  * Created by jdroidcoder on 25.01.17.
@@ -12,6 +13,9 @@ public class GameSectorEntity extends AbstractEntity<Long>{
 
     @Column
     private String name;
+
+    @OneToOne
+    private GameSectorEntity gameSectorEntity;
 
     public String getName() {
         return name;
