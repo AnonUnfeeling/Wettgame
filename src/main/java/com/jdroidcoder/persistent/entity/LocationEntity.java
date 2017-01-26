@@ -87,4 +87,20 @@ public class LocationEntity extends AbstractEntity<Long>{
     public void setGameEventEntity(GameEventEntity gameEventEntity) {
         this.gameEventEntity = gameEventEntity;
     }
+
+    public GameMatchSingleEntity getGameMatchSingleEntity() {
+        return gameMatchSingleEntity;
+    }
+
+    public void setGameMatchSingleEntity(GameMatchSingleEntity gameMatchSingleEntity) {
+        this.gameMatchSingleEntity = gameMatchSingleEntity;
+    }
+
+    public TeamEntity getTeamEntity() {
+        return teamEntity;
+    }
+
+    public void setTeamEntity(TeamEntity teamEntity) {
+        this.teamEntity = teamEntity;
+    }
 }

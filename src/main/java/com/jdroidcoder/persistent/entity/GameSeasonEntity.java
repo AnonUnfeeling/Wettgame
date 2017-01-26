@@ -8,13 +8,13 @@ import javax.persistence.OneToOne;
  * Created by jdroidcoder on 26.01.17.
  */
 @Entity
-public class GameSeason extends AbstractEntity<Long> {
+public class GameSeasonEntity extends AbstractEntity<Long> {
     private static final long serialVersionUID = 926247593761021815L;
 
     @OneToOne(cascade = CascadeType.ALL)
     private GameMatchSingleEntity gameMatchSingleEntity;
 
-    public GameSeason() {
+    public GameSeasonEntity() {
     }
 
     public GameMatchSingleEntity getGameMatchSingleEntity() {

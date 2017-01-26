@@ -25,7 +25,9 @@ public class GameMatchSingleEntity extends AbstractEntity<Long>{
     @OneToOne(cascade = CascadeType.ALL)
     private TeamEntity teamEntity;
     @OneToOne
-    private GameSeason gameSeason;
+    private GameSeasonEntity gameSeason;
+    @OneToOne
+    private UserTipEntity userTipEntity;
 
     public GameMatchSingleEntity() {
     }
@@ -70,11 +72,19 @@ public class GameMatchSingleEntity extends AbstractEntity<Long>{
         this.teamEntity = teamEntity;
     }
 
-    public GameSeason getGameSeason() {
+    public GameSeasonEntity getGameSeason() {
         return gameSeason;
     }
 
-    public void setGameSeason(GameSeason gameSeason) {
+    public void setGameSeason(GameSeasonEntity gameSeason) {
         this.gameSeason = gameSeason;
+    }
+
+    public UserTipEntity getUserTipEntity() {
+        return userTipEntity;
+    }
+
+    public void setUserTipEntity(UserTipEntity userTipEntity) {
+        this.userTipEntity = userTipEntity;
     }
 }

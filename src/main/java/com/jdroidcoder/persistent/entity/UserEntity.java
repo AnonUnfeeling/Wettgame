@@ -32,6 +32,8 @@ public class UserEntity extends AbstractEntity<Long> implements UserDetails {
     private UserDataEntity userDataEntity;
     @ManyToOne
     private UsersGroupEntity usersGroup;
+    @OneToOne
+    private UserTipEntity userTipEntity;
 
     public UsersGroupEntity getUsersGroup() {
         return usersGroup;
@@ -95,6 +97,22 @@ public class UserEntity extends AbstractEntity<Long> implements UserDetails {
 
     public void setUserData(UserDataEntity userData) {
         this.userDataEntity = userData;
+    }
+
+    public UserDataEntity getUserDataEntity() {
+        return userDataEntity;
+    }
+
+    public void setUserDataEntity(UserDataEntity userDataEntity) {
+        this.userDataEntity = userDataEntity;
+    }
+
+    public UserTipEntity getUserTipEntity() {
+        return userTipEntity;
+    }
+
+    public void setUserTipEntity(UserTipEntity userTipEntity) {
+        this.userTipEntity = userTipEntity;
     }
 
     @Override
