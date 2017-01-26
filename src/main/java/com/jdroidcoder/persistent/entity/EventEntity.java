@@ -18,6 +18,8 @@ public class EventEntity extends AbstractEntity<Long> {
     private int isSystem;
     @OneToOne(cascade = CascadeType.ALL)
     private SportEntity sportEntity;
+    @OneToOne
+    private GameEventEntity gameEventEntity;
 
     public EventEntity() {
     }
@@ -50,5 +52,13 @@ public class EventEntity extends AbstractEntity<Long> {
 
     public void setSportEntity(SportEntity sportEntity) {
         this.sportEntity = sportEntity;
+    }
+
+    public GameEventEntity getGameEventEntity() {
+        return gameEventEntity;
+    }
+
+    public void setGameEventEntity(GameEventEntity gameEventEntity) {
+        this.gameEventEntity = gameEventEntity;
     }
 }

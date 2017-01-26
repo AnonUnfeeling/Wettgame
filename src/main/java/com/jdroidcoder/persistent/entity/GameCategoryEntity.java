@@ -15,6 +15,8 @@ public class GameCategoryEntity extends AbstractEntity<Long>{
     private GameSectorEntity gameSectorEntity;
     @OneToOne(cascade = CascadeType.ALL)
     private CategoryEntity categoryEntity;
+    @OneToOne
+    private GameEventEntity gameEventEntity;
 
     public GameCategoryEntity() {
     }
@@ -38,5 +40,13 @@ public class GameCategoryEntity extends AbstractEntity<Long>{
 
     public void setCategoryEntity(CategoryEntity categoryEntity) {
         this.categoryEntity = categoryEntity;
+    }
+
+    public GameEventEntity getGameEventEntity() {
+        return gameEventEntity;
+    }
+
+    public void setGameEventEntity(GameEventEntity gameEventEntity) {
+        this.gameEventEntity = gameEventEntity;
     }
 }

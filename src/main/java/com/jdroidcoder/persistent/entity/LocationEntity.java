@@ -22,6 +22,12 @@ public class LocationEntity extends AbstractEntity<Long>{
     private LocationTypeEntity locationTypeEntity;
     @OneToOne(cascade = CascadeType.ALL)
     private AddressEntity addressEntity;
+    @OneToOne
+    private GameEventEntity gameEventEntity;
+    @OneToOne
+    private GameMatchSingleEntity gameMatchSingleEntity;
+    @OneToOne
+    private TeamEntity teamEntity;
 
     public LocationEntity() {
     }
@@ -72,5 +78,13 @@ public class LocationEntity extends AbstractEntity<Long>{
 
     public void setIsSystem(int isSystem) {
         this.isSystem = isSystem;
+    }
+
+    public GameEventEntity getGameEventEntity() {
+        return gameEventEntity;
+    }
+
+    public void setGameEventEntity(GameEventEntity gameEventEntity) {
+        this.gameEventEntity = gameEventEntity;
     }
 }

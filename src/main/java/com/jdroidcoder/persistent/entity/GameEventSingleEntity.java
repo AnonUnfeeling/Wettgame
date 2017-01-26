@@ -4,15 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 /**
- * Created by jdroidcoder on 25.01.17.
+ * Created by jdroidcoder on 26.01.17.
  */
 @Entity
-public class MatchResultEntity extends AbstractEntity<Long>{
-    private static final long serialVersionUID = 3222473597761021815L;
+public class GameEventSingleEntity extends AbstractEntity<Long> {
+    private static final long serialVersionUID = 5222473597761021815L;
+
     @OneToOne
     private GameMatchSingleEntity gameMatchSingleEntity;
 
-    public MatchResultEntity() {
+    public GameEventSingleEntity() {
     }
 
     public GameMatchSingleEntity getGameMatchSingleEntity() {
